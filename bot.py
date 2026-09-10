@@ -146,7 +146,6 @@ class SubmitButton(discord.ui.Button):
         embed.add_field(name="🎮 遊戲 ID", value=self.game_id, inline=False)
         embed.add_field(name="⚔️ 武學", value=self.martial_art, inline=False)
         embed.add_field(name="⏰ 可參加時間", value=times_str, inline=False)
-        embed.add_field(name="👤 昵稱", value=f"{interaction.user.name}", inline=False)
         
         await interaction.response.send_message(embed=embed, ephemeral=True)
         
@@ -259,7 +258,7 @@ async def baiye_list(interaction: discord.Interaction):
             participant_list = []
             for p in participants:
                 participant_list.append(
-                    f"• {p['user_name']} - ID: {p['game_id']} ({p['martial_art']})"
+                    f"• ID: {p['game_id']} ({p['martial_art']})"
                 )
             
             value = "\n".join(participant_list)
