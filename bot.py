@@ -146,7 +146,7 @@ class SubmitButton(discord.ui.Button):
         embed.add_field(name="🎮 遊戲 ID", value=self.game_id, inline=False)
         embed.add_field(name="⚔️ 武學", value=self.martial_art, inline=False)
         embed.add_field(name="⏰ 可參加時間", value=times_str, inline=False)
-        embed.add_field(name="👤 用戶", value=f"{interaction.user.mention}", inline=False)
+        embed.add_field(name="👤 昵稱", value=f"{interaction.user.name}", inline=False)
         
         await interaction.response.send_message(embed=embed, ephemeral=True)
         
