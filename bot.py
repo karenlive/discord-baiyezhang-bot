@@ -77,7 +77,6 @@ def add_participant(user_id: str, user_name: str, game_id: str, martial_art: str
     """添加參與者"""
     data = load_participants()
     data[user_id] = {
-        "user_name": user_name,
         "game_id": game_id,
         "martial_art": martial_art,
         "times": times,
@@ -258,7 +257,7 @@ async def baiye_list(interaction: discord.Interaction):
             participant_list = []
             for p in participants:
                 participant_list.append(
-                    f"• ID: {p['game_id']} ({p['martial_art']})"
+                    f"• {p['game_id']} ({p['martial_art']})"
                 )
             
             value = "\n".join(participant_list)
